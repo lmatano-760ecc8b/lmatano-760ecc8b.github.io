@@ -1,0 +1,1834 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>b站百科-热门知识库与内容百科_弹幕文化_UP主百科_番剧词条</title>
+  <meta name="description" content="b站百科是面向B站用户的内容知识库，汇集热门番剧、UP主档案、弹幕文化、鬼畜词条与社区梗百科。提供分类索引、深度解析、常见问答与实时资讯，帮助用户快速了解B站内容生态与热门条目。">
+  <meta name="keywords" content="b站百科,B站百科知识库,弹幕文化百科,UP主百科,番剧词条">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FB7299'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='Arial'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --surface-soft: #f0f3f8;
+      --text: #1a1d26;
+      --text-secondary: #5a6172;
+      --text-tertiary: #8a91a3;
+      --accent: #fb7299;
+      --accent-deep: #e05a7e;
+      --accent-soft: #ffeef3;
+      --blue: #4a8cff;
+      --blue-soft: #eaf1ff;
+      --border: #e3e8f0;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.10);
+      --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --max-width: 1200px;
+      --header-h: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== 导航 ===== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-h);
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #fb7299, #ff9eb5);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 4px 10px rgba(251, 114, 153, 0.3);
+    }
+
+    .logo-text {
+      color: var(--text);
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(251, 114, 153, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(251, 114, 153, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text-secondary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent-deep);
+      background: var(--accent-soft);
+    }
+
+    /* ===== Banner ===== */
+    .hero {
+      padding: 48px 0 36px;
+      background: linear-gradient(170deg, #fff 0%, #f6f8fc 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(251, 114, 153, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4.2vw, 44px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+
+    .hero-search {
+      display: flex;
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+      max-width: 480px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .hero-search:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(251, 114, 153, 0.10);
+    }
+
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 10px 18px;
+      font-size: 15px;
+      background: transparent;
+      font-family: inherit;
+      color: var(--text);
+    }
+
+    .hero-search input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .hero-search button {
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 26px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .hero-search button:hover {
+      background: var(--accent-deep);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .hero-tags a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      background: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .hero-tags a:hover {
+      border-color: var(--accent);
+      color: var(--accent-deep);
+      background: var(--accent-soft);
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .hero-card-icon.pink {
+      background: var(--accent-soft);
+    }
+
+    .hero-card-icon.blue {
+      background: var(--blue-soft);
+    }
+
+    .hero-card-icon.green {
+      background: #e8f8ee;
+    }
+
+    .hero-card-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .hero-card-body p {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* ===== 通用 Section ===== */
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .section-head h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 5px;
+      border-radius: 3px;
+      background: linear-gradient(180deg, #fb7299, #ffb3c7);
+    }
+
+    .section-head p {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      max-width: 460px;
+    }
+
+    .section-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-deep);
+      white-space: nowrap;
+    }
+
+    .section-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 分类入口 ===== */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .cat-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cat-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .cat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .cat-item span {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .cat-item small {
+      display: block;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* ===== 内容卡片网格 ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.25s;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(251, 114, 153, 0.35);
+    }
+
+    .card-cover {
+      height: 140px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, #fbc2d4 0%, #ffe3ec 50%, #f9e7f0 100%);
+    }
+
+    .card-cover.c2 {
+      background: linear-gradient(135deg, #c2d9fb 0%, #e3ecff 50%, #e7f0fa 100%);
+    }
+
+    .card-cover.c3 {
+      background: linear-gradient(135deg, #c2fbd9 0%, #e3fff0 50%, #e7faf0 100%);
+    }
+
+    .card-cover.c4 {
+      background: linear-gradient(135deg, #fbe3c2 0%, #fff0e3 50%, #faf0e7 100%);
+    }
+
+    .card-cover.c5 {
+      background: linear-gradient(135deg, #e3c2fb 0%, #f0e3ff 50%, #f0e7fa 100%);
+    }
+
+    .card-cover.c6 {
+      background: linear-gradient(135deg, #c2f0fb 0%, #e3f9ff 50%, #e7f8fa 100%);
+    }
+
+    .cover-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--accent-deep);
+    }
+
+    .cover-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #2d2f3a;
+      line-height: 1.3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-body {
+      padding: 16px 18px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--text-secondary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .tag.pink {
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    .tag.blue {
+      background: var(--blue-soft);
+      color: #3568c9;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .card-meta strong {
+      color: var(--accent-deep);
+      font-weight: 700;
+    }
+
+    /* ===== 最新动态列表 ===== */
+    .update-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .update-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: all 0.2s;
+    }
+
+    .update-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .update-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .update-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .update-body p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .update-time {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-left: auto;
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    /* ===== 深度解析 ===== */
+    .deep-dive {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 36px 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .deep-dive h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    .deep-dive h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 24px 0 10px;
+      color: var(--accent-deep);
+    }
+
+    .deep-dive p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.85;
+    }
+
+    .deep-dive p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ===== 数据看板 ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      transition: all 0.2s;
+    }
+
+    .faq-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .faq-item h3::before {
+      content: 'Q';
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 12px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding-left: 30px;
+      line-height: 1.75;
+    }
+
+    /* ===== 评论 ===== */
+    .comment-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .comment-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      transition: box-shadow 0.2s;
+    }
+
+    .comment-item:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .avatar.a1 { background: #fb7299; }
+    .avatar.a2 { background: #4a8cff; }
+    .avatar.a3 { background: #34c77b; }
+    .avatar.a4 { background: #f5a623; }
+    .avatar.a5 { background: #9b59b6; }
+    .avatar.a6 { background: #e74c3c; }
+    .avatar.a7 { background: #1abc9c; }
+    .avatar.a8 { background: #e67e22; }
+
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .comment-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+
+    .comment-name {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .comment-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ===== 资讯 ===== */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .news-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(251, 114, 153, 0.3);
+    }
+
+    .news-date {
+      font-size: 12px;
+      color: var(--accent-deep);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .news-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== 订阅 ===== */
+    .subscribe-band {
+      background: linear-gradient(135deg, #fb7299 0%, #ff9eb5 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+      color: #fff;
+      box-shadow: 0 12px 32px rgba(251, 114, 153, 0.25);
+    }
+
+    .subscribe-band h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .subscribe-band p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .subscribe-form {
+      display: flex;
+      background: #fff;
+      border-radius: 999px;
+      padding: 4px;
+      min-width: 320px;
+      flex: 0 1 360px;
+    }
+
+    .subscribe-form input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      border-radius: 999px;
+      background: transparent;
+      font-family: inherit;
+      color: var(--text);
+    }
+
+    .subscribe-form button {
+      border: none;
+      background: #2d2f3a;
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .subscribe-form button:hover {
+      background: #1a1d26;
+    }
+
+    /* ===== 页脚 ===== */
+    .site-footer {
+      background: #1a1d26;
+      color: #a8afbd;
+      padding: 48px 0 28px;
+      margin-top: 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+
+    .footer-brand .logo-text {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand .logo-text span {
+      color: #fb7299;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #7c8494;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #8a91a3;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fb7299;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2d313e;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .footer-bottom a {
+      color: #8a91a3;
+    }
+
+    .footer-bottom a:hover {
+      color: #fb7299;
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-visual {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .hero-card {
+        flex: 1 1 200px;
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 32px 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .header-actions .btn-outline {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .section {
+        padding: 36px 0;
+      }
+
+      .cat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .cat-item {
+        padding: 14px 12px;
+        gap: 10px;
+      }
+
+      .cat-item span {
+        font-size: 13px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .update-list {
+        grid-template-columns: 1fr;
+      }
+
+      .deep-dive {
+        padding: 24px 20px;
+      }
+
+      .deep-dive h2 {
+        font-size: 22px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .stat-num {
+        font-size: 24px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comment-list {
+        grid-template-columns: 1fr;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subscribe-band {
+        padding: 28px 22px;
+      }
+
+      .subscribe-form {
+        min-width: 0;
+        flex: 1 1 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-visual {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 导航 ===== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/" aria-label="b站百科首页">
+        <span class="logo-mark">B</span>
+        <span class="logo-text">b站<span>百科</span></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="/#hot-content">热门词条</a>
+        <a href="/#latest-updates">最新更新</a>
+        <a href="/#categories">分类索引</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">百科资讯</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-outline" href="/#subscribe">订阅更新</a>
+        <a class="btn btn-primary" href="/#hot-content">开始探索</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 首屏 Banner ===== -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="hero-badge">📘 内容知识库 · 实时更新</div>
+        <h1><em>b站百科</em>：热门知识库与内容百科索引</h1>
+        <p class="hero-desc">
+          汇集番剧词条、UP主档案、弹幕文化与社区梗百科，为B站用户提供分类清晰的内容参考。无论是查词条、追热门，还是了解UP主与番剧背景，都能在这里快速找到方向。
+        </p>
+        <form class="hero-search" onsubmit="return false;">
+          <input type="text" placeholder="搜索词条、UP主、番剧或社区梗…" aria-label="搜索b站百科内容">
+          <button type="submit">搜索百科</button>
+        </form>
+        <div class="hero-tags">
+          <a href="/#hot-content">弹幕文化</a>
+          <a href="/#hot-content">鬼畜词条</a>
+          <a href="/#hot-content">UP主百科</a>
+          <a href="/#hot-content">番剧档案</a>
+          <a href="/#hot-content">社区梗百科</a>
+          <a href="/#hot-content">热门词条</a>
+          <a href="/#hot-content">B站编年史</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon pink">🎬</div>
+          <div class="hero-card-body">
+            <h4>番剧词条库</h4>
+            <p>收录当季新番与经典番剧档案</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon blue">🎤</div>
+          <div class="hero-card-body">
+            <h4>UP主百科</h4>
+            <p>创作者档案与代表作索引</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon green">💬</div>
+          <div class="hero-card-body">
+            <h4>弹幕词条</h4>
+            <p>热门弹幕用语与社区梗解释</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 分类入口 ===== -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>百科分类索引</h2>
+        <p>按内容类型快速定位词条，覆盖番剧、UP主、弹幕用语与社区文化。</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#ffeef3;">📺</div>
+          <div>
+            <span>番剧词条</span>
+            <small>新番·经典·剧场版</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#eaf1ff;">🎙️</div>
+          <div>
+            <span>UP主百科</span>
+            <small>创作者·代表作·风格</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#e8f8ee;">💬</div>
+          <div>
+            <span>弹幕词条</span>
+            <small>热词·梗·流行语</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#fff3e6;">🎵</div>
+          <div>
+            <span>音乐词条</span>
+            <small>翻唱·原创·VOCALOID</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#f3e8ff;">🎮</div>
+          <div>
+            <span>游戏百科</span>
+            <small>攻略·赛事·名场面</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#e8f4ff;">📖</div>
+          <div>
+            <span>社区文化</span>
+            <small>梗百科·事件·用语</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#fff0e6;">🏆</div>
+          <div>
+            <span>排行榜</span>
+            <small>热门·新作·口碑</small>
+          </div>
+        </a>
+        <a class="cat-item" href="/#hot-content">
+          <div class="cat-icon" style="background:#e6faf8;">📅</div>
+          <div>
+            <span>B站编年史</span>
+            <small>大事记·版本·里程碑</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 热门内容推荐 ===== -->
+  <section class="section" id="hot-content">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>热门词条推荐</h2>
+        <p>近期搜索与讨论热度较高的百科词条，涵盖番剧、UP主与社区梗。</p>
+        <a class="section-link" href="/#latest-updates">查看最新更新 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="content-card">
+          <div class="card-cover">
+            <span class="cover-tag">番剧词条</span>
+            <div class="cover-title">《时光代理人》</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag pink">国产动画</span>
+              <span class="tag">悬疑</span>
+              <span class="tag">治愈</span>
+            </div>
+            <p class="card-desc">国产原创动画代表之一，以照片穿越设定展开单元故事。词条收录剧情梗概、角色档案与分集看点，适合新观众快速了解。</p>
+            <div class="card-meta">
+              <span>热度 <strong>98.6万</strong></span>
+              <span>已完结</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-cover c2">
+            <span class="cover-tag">UP主百科</span>
+            <div class="cover-title">老番茄</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag blue">游戏区</span>
+              <span class="tag">搞笑解说</span>
+              <span class="tag">剧情向</span>
+            </div>
+            <p class="card-desc">B站知名游戏UP主，以剧情化游戏解说和幽默风格著称。词条整理其代表作系列、名场面与创作风格演变。</p>
+            <div class="card-meta">
+              <span>粉丝 <strong>1980万</strong></span>
+              <span>持续更新</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-cover c3">
+            <span class="cover-tag">弹幕词条</span>
+            <div class="cover-title">“前方高能”</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag">弹幕用语</span>
+              <span class="tag">经典梗</span>
+            </div>
+            <p class="card-desc">B站弹幕文化中的经典预警用语，常用于剧情高能片段前。词条解释来源、使用场景与变体说法，帮助新用户理解弹幕礼仪。</p>
+            <div class="card-meta">
+              <span>引用 <strong>320万+</strong></span>
+              <span>经典词条</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-cover c4">
+            <span class="cover-tag">番剧词条</span>
+            <div class="cover-title">《进击的巨人》</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag pink">日本动画</span>
+              <span class="tag">热血</span>
+              <span class="tag">完结</span>
+            </div>
+            <p class="card-desc">现象级动画作品，词条涵盖世界观设定、角色关系与各季关键剧情节点，适合想系统补番的观众查阅。</p>
+            <div class="card-meta">
+              <span>评分 <strong>9.7</strong></span>
+              <span>全季完结</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-cover c5">
+            <span class="cover-tag">社区文化</span>
+            <div class="cover-title">“B站等级体系”</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag">社区百科</span>
+              <span class="tag">入门必读</span>
+            </div>
+            <p class="card-desc">从LV0到LV6的成长体系说明，包含答题转正、经验值获取与等级权益。通俗解释B站社区参与的基础规则。</p>
+            <div class="card-meta">
+              <span>阅读 <strong>86万</strong></span>
+              <span>基础词条</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-cover c6">
+            <span class="cover-tag">音乐词条</span>
+            <div class="cover-title">VOCALOID 中文曲</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag blue">虚拟歌手</span>
+              <span class="tag">原创音乐</span>
+            </div>
+            <p class="card-desc">整理洛天依、言和等虚拟歌手代表作与知名P主词条，涵盖殿堂曲、传说曲等社区评价体系说明。</p>
+            <div class="card-meta">
+              <span>收录 <strong>420+</strong></span>
+              <span>持续补充</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 最新更新 ===== -->
+  <section class="section" id="latest-updates">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>最新更新与热播动态</h2>
+        <p>2026年11月7日前后百科词条与内容动态汇总。</p>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>《凡人修仙传》年番新词条</h4>
+            <p>更新角色档案与最新剧情节点，补充境界体系说明。</p>
+          </div>
+          <span class="update-time">11月7日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>UP主“何同学”词条更新</h4>
+            <p>新增2026年代表作品目录与创作风格分析。</p>
+          </div>
+          <span class="update-time">11月6日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>弹幕热词“夯”释义上线</h4>
+            <p>收录近期社区高频弹幕用语，解释使用场景与变体。</p>
+          </div>
+          <span class="update-time">11月6日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>《灵笼》第二季词条补全</h4>
+            <p>完善世界观设定、势力关系与关键角色介绍。</p>
+          </div>
+          <span class="update-time">11月5日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>B站百大UP主名单词条</h4>
+            <p>2026年百大UP主完整名单与分区分布索引已更新。</p>
+          </div>
+          <span class="update-time">11月5日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>“鬼畜”词条视觉改版</h4>
+            <p>新增经典鬼畜素材来源与代表作品目录。</p>
+          </div>
+          <span class="update-time">11月4日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>《中国奇谭》词条热度上升</h4>
+            <p>分集导演与美术风格说明补充，适合新观众查阅。</p>
+          </div>
+          <span class="update-time">11月4日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-dot"></span>
+          <div class="update-body">
+            <h4>社区“三连”词条更新</h4>
+            <p>补充三连互动机制说明与常见使用场景。</p>
+          </div>
+          <span class="update-time">11月3日</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 深度解析 ===== -->
+  <section class="section" id="deep-analysis">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>深度解析：b站百科的内容价值与使用方式</h2>
+        <p>从词条结构、分类逻辑到常见使用场景，了解这个内容知识库能提供什么。</p>
+      </div>
+      <div class="deep-dive">
+        <h2>b站百科：不只是词条，更是内容消费的导航地图</h2>
+        <p>
+          对于经常浏览B站的用户来说，<strong>b站百科</strong>解决的是一个很实际的问题：面对海量内容，如何快速找到自己需要的背景信息。无论是刚入坑的新观众想了解一部番剧的基本信息，还是老用户想查某个弹幕梗的出处，一个结构清晰的百科页面都能大幅降低检索成本。本页面围绕番剧词条、UP主档案、弹幕用语和社区文化四个方向展开，把散落在各处的信息整理成可读、可查、可延伸的内容模块。
+        </p>
+        <h3>番剧词条：从“看什么”到“看懂什么”</h3>
+        <p>
+          番剧是B站内容生态中用户黏性最强的板块之一。b站百科中的番剧词条并不只是简单罗列剧情简介，而是从世界观设定、角色关系、制作背景和分集看点几个维度展开。比如一部原创动画，词条会重点说明它的制作公司、导演风格和美术特点；一部漫改作品则会补充原作信息与改编取舍。这种结构可以帮助观众在追番前建立合理预期，也能在追番后补充容易忽略的细节。对于补番党来说，按年份和类型索引的番剧词条尤其实用。
+        </p>
+        <h3>UP主百科：了解创作者的成长轨迹</h3>
+        <p>
+          UP主是B站内容生产的核心。b站百科中的UP主词条会整理创作者的基本档案、代表作系列、风格特征和粉丝评价。相比于零散地翻看视频列表，一个完整的UP主词条能帮助新观众快速判断“这个创作者的内容是否适合我”。词条还会记录UP主的重要转折点，比如从游戏区转向生活区、从单人创作到团队化运营等，这些信息对于理解内容风格的变化很有参考价值。需要说明的是，词条信息以公开内容整理为主，不涉及个人隐私。
+        </p>
+        <h3>弹幕文化与社区梗：理解B站的“语言体系”</h3>
+        <p>
+          弹幕是B站最具辨识度的社区文化。b站百科中的弹幕词条和社区梗词条，本质上是在解释这套“语言体系”的用法。比如“前方高能”“名场面”“泪目”这些高频弹幕，词条会说明它们的来源、使用时机和变体说法；对于“空耳”“鬼畜”“整活”等社区概念，词条则会解释其文化脉络和常见场景。对于新用户来说，这些词条能帮助更快融入社区交流；对于老用户来说，则是一次社区记忆的整理。弹幕文化本身处于不断变化中，词条也会持续更新。
+        </p>
+        <h3>分类索引与搜索：用两种方式找到目标</h3>
+        <p>
+          b站百科提供分类索引和关键词搜索两种查找方式。分类索引适合“大概知道想找什么类型”的场景，比如按番剧、UP主、弹幕、音乐、游戏等分类逐层浏览；搜索则适合目标明确的场景，直接输入词条名或关键词即可。页面中的推荐卡片、最新更新和资讯模块，则承担了“发现”的功能，帮助用户在没有明确目标时也能看到值得关注的内容。这种“搜索+分类+推荐”的组合，接近内容平台的使用习惯，而不是传统百科的单一检索模式。
+        </p>
+        <h3>适合哪些人使用</h3>
+        <p>
+          从实际使用场景来看，b站百科适合几类人群：刚接触B站、希望快速了解社区文化的新用户；想系统补番、需要背景信息参考的动画观众；关注UP主动态、想了解创作者风格的内容爱好者；以及需要查找弹幕梗出处和用法的社区用户。页面不预设专业门槛，词条解释以通俗可读为优先，同时保留必要的准确性。随着内容持续补充，b站百科也在尝试覆盖更多细分领域，让不同兴趣方向的用户都能找到对应的入口。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 数据看板 ===== -->
+  <section class="section" id="stats">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>百科数据概览</h2>
+        <p>词条收录与内容更新情况一览。</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">2,860+</div>
+          <div class="stat-label">已收录词条</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">18</div>
+          <div class="stat-label">内容分类</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">46.2万</div>
+          <div class="stat-label">本月阅读量</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">每日</div>
+          <div class="stat-label">词条更新频率</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <p>关于b站百科词条、分类与使用方式的常见疑问。</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>b站百科主要收录哪些类型的内容？</h3>
+          <p>目前以番剧词条、UP主档案、弹幕用语和社区文化为主，同时涵盖音乐、游戏、排行榜等方向。每个词条会尽量提供背景说明、关键信息和延伸参考，帮助用户快速建立认知。分类索引页可以查看完整的内容类型分布。</p>
+        </div>
+        <div class="faq-item">
+          <h3>番剧词条适合追番前看还是追完后看？</h3>
+          <p>两种情况都适合。追番前可通过词条了解世界观设定、制作阵容和类型标签，帮助判断是否符合口味；追完后则可以补充容易忽略的细节和背景信息。部分词条会标注剧透提示，用户可以根据自己的需求选择阅读深度。</p>
+        </div>
+        <div class="faq-item">
+          <h3>弹幕词条和普通网络用语词典有什么区别？</h3>
+          <p>弹幕词条更强调使用场景和社区语境。同一个词在不同视频分区、不同时间段的用法可能有差异，词条会尽量说明这些变化。此外，弹幕词条还会关联相关的社区梗和文化背景，而不是只给出字面解释。</p>
+        </div>
+        <div class="faq-item">
+          <h3>UP主词条的信息来源和更新频率如何？</h3>
+          <p>词条信息以公开内容整理为主，包括创作者发布的视频、动态和公开访谈等。更新频率根据UP主活跃程度和内容变化而定，通常重要动态会较快反映到词条中。词条不涉及个人隐私信息，仅整理与内容创作相关的公开资料。</p>
+        </div>
+        <div class="faq-item">
+          <h3>如何快速找到想查的词条？</h3>
+          <p>可以使用页面顶部的搜索框直接输入词条名或关键词，也可以从分类索引进入对应板块逐层浏览。如果目标不太明确，热门词条推荐和最新更新列表也是不错的入口，能看到近期用户关注度较高的内容。</p>
+        </div>
+        <div class="faq-item">
+          <h3>百科内容会持续更新吗？</h3>
+          <p>页面采用持续更新机制，词条会根据内容生态的变化进行补充和修正。用户可以通过订阅更新或定期访问最新更新板块了解变化。如果发现词条信息有误或需要补充，页面也提供了反馈入口，方便用户参与内容完善。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 用户评论 ===== -->
+  <section class="section" id="comments">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>用户评论</h2>
+        <p>来自百科读者与B站用户的真实讨论与反馈。</p>
+      </div>
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="avatar a1">追</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">追番小能手</span>
+              <span class="comment-date">11月6日</span>
+            </div>
+            <p class="comment-text">番剧词条整理得挺清楚的，补《时光代理人》之前先看了背景介绍，追起来顺畅很多。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a2">弹</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">弹幕观察员</span>
+              <span class="comment-date">11月5日</span>
+            </div>
+            <p class="comment-text">弹幕词条挺有意思，很多天天刷的梗终于知道出处了。希望能多更新一些近期新梗。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a3">路</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">路过的老用户</span>
+              <span class="comment-date">11月5日</span>
+            </div>
+            <p class="comment-text">UP主词条做得比想象中细，代表作的梳理对安利新观众很有用。就是有些老UP主的词条还能再全一点。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a4">补</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">补番中勿扰</span>
+              <span class="comment-date">11月4日</span>
+            </div>
+            <p class="comment-text">分类索引很方便，按类型找番剧比翻榜单快。希望以后能加个按年份筛选的功能。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a5">一</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">一只小透明</span>
+              <span class="comment-date">11月4日</span>
+            </div>
+            <p class="comment-text">作为刚入站三个月的新人，等级体系和社区用语这些词条帮助很大，至少不会看不懂弹幕了。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a6">吐</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">吐槽星人</span>
+              <span class="comment-date">11月3日</span>
+            </div>
+            <p class="comment-text">整体不错，不过有些词条的解释偏官方，弹幕文化的野生感少了一点。继续加油吧。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a7">鬼</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">鬼畜区常驻</span>
+              <span class="comment-date">11月3日</span>
+            </div>
+            <p class="comment-text">鬼畜词条更新了素材来源，这个好评。很多经典素材现在的新观众都不认识了。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a8">番</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">番剧收藏家</span>
+              <span class="comment-date">11月2日</span>
+            </div>
+            <p class="comment-text">希望增加剧场版和OVA的独立词条分类，现在混在TV版里找起来有点麻烦。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a1">音</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">V家听众</span>
+              <span class="comment-date">11月2日</span>
+            </div>
+            <p class="comment-text">VOCALOID词条收录的殿堂曲信息挺准，传说曲列表也帮了大忙。希望多补一些早期P主的资料。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a2">百</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">百大观察</span>
+              <span class="comment-date">11月1日</span>
+            </div>
+            <p class="comment-text">百大UP主名单词条更新及时，分区分布整理得也清楚，适合做内容研究参考。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a3">随</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">随便看看</span>
+              <span class="comment-date">10月31日</span>
+            </div>
+            <p class="comment-text">页面打开速度挺快，手机上浏览也不卡。就是有些词条之间跳转可以再顺畅一点。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar a4">梗</div>
+          <div class="comment-body">
+            <div class="comment-head">
+              <span class="comment-name">梗百科爱好者</span>
+              <span class="comment-date">10月30日</span>
+            </div>
+            <p class="comment-text">社区梗词条如果能加上首次出现的大致时间线就更好了，方便理解一个梗的传播过程。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 相关资讯 ===== -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>百科资讯</h2>
+        <p>围绕B站内容生态、词条更新与社区动态的资讯汇总。</p>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-date">2026年11月7日</div>
+          <h3>b站百科新增“年度弹幕”词条专题</h3>
+          <p>整理历年年度弹幕词条与用法演变，帮助用户回顾弹幕文化的发展脉络，词条已同步更新至最新年份。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月6日</div>
+          <h3>UP主档案库覆盖范围扩展至知识区</h3>
+          <p>百科UP主词条新增知识区创作者分类，涵盖科普、人文、技术等方向的内容创作者基本档案与代表作索引。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月5日</div>
+          <h3>番剧词条引入“分集看点”模块</h3>
+          <p>部分热门番剧词条开始提供分集看点摘要，方便追番用户快速回顾剧情节点，同时为补番用户提供节奏参考。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月4日</div>
+          <h3>社区文化词条新增“B站编年史”入口</h3>
+          <p>百科页面新增编年史专题入口，按年份整理B站重要版本更新、社区事件与文化节点，提供时间线式浏览体验。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月3日</div>
+          <h3>弹幕用语词条支持按热度排序</h3>
+          <p>弹幕词条列表新增热度排序功能，用户可按近期使用频率查看热门弹幕用语，方便了解社区语言变化趋势。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月2日</div>
+          <h3>百科搜索功能优化：支持别名检索</h3>
+          <p>搜索框现已支持词条别名和俗称检索，输入常用简称也能找到对应词条，进一步提升查找效率。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 订阅 ===== -->
+  <section class="section" id="subscribe">
+    <div class="wrap">
+      <div class="subscribe-band">
+        <div>
+          <h2>订阅 b站百科 更新提醒</h2>
+          <p>新词条、热门内容与社区动态，第一时间获取。</p>
+        </div>
+        <form class="subscribe-form" onsubmit="return false;">
+          <input type="email" placeholder="输入邮箱订阅更新" aria-label="订阅邮箱">
+          <button type="submit">立即订阅</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">b站<span>百科</span></div>
+          <p>面向B站用户的内容知识库，收录番剧词条、UP主档案、弹幕用语与社区文化。内容以公开信息整理为主，仅供参考与学习交流。</p>
+        </div>
+        <div class="footer-col">
+          <h4>百科分类</h4>
+          <a href="/#hot-content">番剧词条</a>
+          <a href="/#hot-content">UP主百科</a>
+          <a href="/#hot-content">弹幕词条</a>
+          <a href="/#hot-content">社区文化</a>
+        </div>
+        <div class="footer-col">
+          <h4>快速入口</h4>
+          <a href="/#latest-updates">最新更新</a>
+          <a href="/#deep-analysis">深度解析</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#news">百科资讯</a>
+        </div>
+        <div class="footer-col">
+          <h4>友情链接</h4>
+          <a href="/#hot-content">内容索引</a>
+          <a href="/#stats">数据概览</a>
+          <a href="/#subscribe">订阅提醒</a>
+          <a href="/#comments">用户评论</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 b站百科 · 内容知识库 | 本站为内容整理与索引页面，非B站官方站点</span>
+        <span>
+          <a href="/#faq">免责声明</a> ·
+          <a href="/#news">资讯来源</a> ·
+          <a href="/#subscribe">联系订阅</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
